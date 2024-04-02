@@ -1,12 +1,93 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\zaaam\\source\\repos\\Applikation med API\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|c:\\users\\zaaam\\source\\repos\\applikation med api\\applikation med api\\models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|solutionrelative:applikation med api\\models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|c:\\users\\zaaam\\source\\repos\\applikation med api\\applikation med api\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|solutionrelative:applikation med api\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|c:\\users\\zaaam\\source\\repos\\applikation med api\\applikation med api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|solutionrelative:applikation med api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|c:\\users\\zaaam\\source\\repos\\applikation med api\\applikation med api\\migrations\\20240402173311_addproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|solutionrelative:applikation med api\\migrations\\20240402173311_addproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20240402173311_AddProducts.cs",
+              "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation med API\\Applikation med API\\Migrations\\20240402173311_AddProducts.cs",
+              "RelativeDocumentMoniker": "Applikation med API\\Migrations\\20240402173311_AddProducts.cs",
+              "ToolTip": "C:\\Users\\zaaam\\source\\repos\\Applikation med API\\Applikation med API\\Migrations\\20240402173311_AddProducts.cs",
+              "RelativeToolTip": "Applikation med API\\Migrations\\20240402173311_AddProducts.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T17:33:11.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation med API\\Applikation med API\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Applikation med API\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\zaaam\\source\\repos\\Applikation med API\\Applikation med API\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Applikation med API\\Data\\AppDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T17:20:37.381Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation med API\\Applikation med API\\Data\\SeedData.cs",
+              "RelativeDocumentMoniker": "Applikation med API\\Data\\SeedData.cs",
+              "ToolTip": "C:\\Users\\zaaam\\source\\repos\\Applikation med API\\Applikation med API\\Data\\SeedData.cs",
+              "RelativeToolTip": "Applikation med API\\Data\\SeedData.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T17:12:06.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Products.cs",
+              "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation med API\\Applikation med API\\Models\\Products.cs",
+              "RelativeDocumentMoniker": "Applikation med API\\Models\\Products.cs",
+              "ToolTip": "C:\\Users\\zaaam\\source\\repos\\Applikation med API\\Applikation med API\\Models\\Products.cs",
+              "RelativeToolTip": "Applikation med API\\Models\\Products.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAIwAkAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T17:11:40.356Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
