@@ -6,3 +6,25 @@
 }
 
 <h1>Welcome, @accessControl.LoggedInAccountName!</h1>
+
+
+<h2>Products</h2>
+@if (Model.Products != null && Model.Products.Count > 0)
+{
+    <ul>
+        @foreach (var product in Model.Products)
+        {
+            <li>
+                <h3>@product.Name</h3>
+                <img src="" alt="Image of @product.Name" />
+                <p>@product.Description</p>
+                <p>Price: @product.Price</p>
+                <p>Category: @product.Category</p>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No products found.</p>
+}
