@@ -30,6 +30,8 @@ namespace Applikation_med_API.Data
                 });
             }
 
+            database.Products.Add(new Product { Id = 1, Name = "Kaffe", ImageFileName = "kaffe.jpg", Price = 59.99m, Category = "Drycker", Description = "Ett fint malet kaffe från Colombia." });
+
             database.SaveChanges();
         }
     }

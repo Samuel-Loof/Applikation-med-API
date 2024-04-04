@@ -20,7 +20,6 @@ public static class SeedData
             new Product { Id = 2, Name = "Te", ImageFileName = "te.jpg", Price = 39.99m, Category = "Drycker", Description = "Grönt te med en fräsch smak av citron." },
             new Product { Id = 3, Name = "Laptop", ImageFileName = "laptop.jpg", Price = 9999.99m, Category = "Elektronik", Description = "En kraftfull laptop perfekt för både arbete och spel." },
             new Product { Id = 4, Name = "Hörlurar", ImageFileName = "horlurar.jpg", Price = 799.99m, Category = "Elektronik", Description = "Brusreducerande hörlurar med kristallklart ljud." },
-            new Product { Id = 4, Name = "Hörlurar", ImageFileName = "horlurar.jpg", Price = 799.99m, Category = "Elektronik", Description = "Brusreducerande hörlurar med kristallklart ljud." },
             new Product { Id = 5, Name = "E-boksläsare", ImageFileName = "ebook.jpg", Price = 1399.99m, Category = "Elektronik", Description = "Håll tusentals böcker i handen med vår lättviktiga e-boksläsare." },
             new Product { Id = 6, Name = "Köksknivar", ImageFileName = "knivar.jpg", Price = 899.99m, Category = "Hem", Description = "Ett set med professionella köksknivar för varje tillfälle." },
             new Product { Id = 7, Name = "Grytset", ImageFileName = "grytor.jpg", Price = 1499.99m, Category = "Hem", Description = "Högkvalitativa grytor och pannor för dina matlagningsbehov." },
