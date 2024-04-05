@@ -6,7 +6,7 @@ namespace Applikation_med_API.Models
     {
         //public Account Account { get; set; }
         [Key]
-        public int ID { get; set; }
+        public int ProductId { get; set; }
         public string Name { get; set; }
 
         //[Required]
