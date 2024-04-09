@@ -11,13 +11,13 @@ namespace Applikation_med_API.Models
         public int? AccountID { get; set; } // connect the product to an account
 
 
+
+
         public decimal Price { get; set; }
 
-        public int Quantity { get; set; }
+        public string Category { get; set; }
 
-        public string? ImagePath { get; set; }
- 
-        public string? Category { get; set; }
+        public int Quantity { get; set; }
 
         public string? Description { get; set; }
     }
