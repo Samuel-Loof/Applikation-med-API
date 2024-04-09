@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Applikation_med_API.Data;
 using Applikation_med_API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Applikation_med_API.Pages
 {
@@ -30,21 +31,21 @@ namespace Applikation_med_API.Pages
                                  .ToList();
         }
 
-        public IActionResult OnPostRemoveItem(int cartItemId)
+        public async Task<IActionResult> OnPostRemoveProduct(int cartItemId)
         {
-            var cartItemToRemove = _database.CartItems.FirstOrDefault(ci => ci.ID == cartItemId && ci.ShoppingCartId == _accessControl.GetCurrentShoppingCartId());
+            var cartItem = await _database.CartItems
+                .FirstOrDefaultAsync(ci => ci.ID == cartItemId && ci.ShoppingCartId == _accessControl.GetCurrentShoppingCartId());
 
-            if (cartItemToRemove != null)
+            if (cartItem != null)
             {
                 // Logic to remove the cart item from the cart
-                _database.CartItems.Remove(cartItemToRemove);
-                _database.SaveChanges();
+                _database.CartItems.Remove(cartItem);
+                await _database.SaveChangesAsync();
             }
 
-            // currently when trying to remove a single item, temporary removes it,
-            // but when adding another item to the shopping cart it fetches the old items and adds another
             return RedirectToPage();
         }
+
 
         public IActionResult OnPostClearCart()
         {
@@ -59,5 +60,39 @@ namespace Applikation_med_API.Pages
 
             return RedirectToPage();
         }
+
+        public async Task<IActionResult> OnPostIncrementQuantity(int cartItemId)
+        {
+            var cartItem = await _database.CartItems.FindAsync(cartItemId);
+            if (cartItem != null)
+            {
+                cartItem.Quantity += 1;
+                await _database.SaveChangesAsync();
+            }
+            return RedirectToPage();
+        }
+
+
+        public async Task<IActionResult> OnPostDecrementQuantity(int cartItemId)
+        {
+            var cartItem = await _database.CartItems.FindAsync(cartItemId);
+            if (cartItem != null)
+            {
+                if (cartItem.Quantity > 1)
+                {
+                    // If quantity is greater than 1, decrement it
+                    cartItem.Quantity -= 1;
+                }
+                else
+                {
+                    // If quantity is 1, remove the item from the cart
+                    _database.CartItems.Remove(cartItem);
+                }
+                await _database.SaveChangesAsync();
+            }
+            return RedirectToPage();
+        }
+
+
     }
 }

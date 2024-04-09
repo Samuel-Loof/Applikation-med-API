@@ -12,7 +12,7 @@ namespace Applikation_med_API.Data
         public int LoggedInAccountID { get; private set; }
         public string LoggedInAccountName { get; private set; }
 
-        // Constructor
+
         public AccessControl(AppDbContext db, IHttpContextAccessor httpContextAccessor)
         {
             _db = db;
@@ -41,11 +41,10 @@ namespace Applikation_med_API.Data
             }
             else
             {
-                // If not exists, create a new ShoppingCart
+                // create a new ShoppingCart if none exists
                 shoppingCart = new ShoppingCart
                 {
                     AccountID = LoggedInAccountID,
-                    // Initialize other properties as needed
                 };
 
                 _db.ShoppingCarts.Add(shoppingCart);

@@ -17,10 +17,10 @@
         {
             <li>
                 <h3>@product.Name</h3>
-                <img src="" alt="Image of @product.Name" />
+                <img src="" alt="En bild av @product.Name" />
                 <p>@product.Description</p>
-                <p>Price: @product.Price</p>
-                <p>Category: @product.Category</p>
+                <p>Pris: @(product.Price.ToString("0.##")) kr</p>
+                <p>Kategori: @product.Category</p>
                 <!-- Add to cart button -->
                 <form method="post">
                     <input type="hidden" name="productId" value="@product.ID" />
@@ -32,5 +32,5 @@
 }
 else
 {
-    <p>No products found.</p>
+    <p>Hittade inga produkter.</p>
 }

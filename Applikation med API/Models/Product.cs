@@ -10,8 +10,8 @@ namespace Applikation_med_API.Models
 
         public int? AccountID { get; set; } // connect the product to an account
 
-        //[Required]
-        //public string ImageFileName { get; set; } // Namn på bildfilen i undermapp till wwwroot
+
+
 
         public decimal Price { get; set; }
 
