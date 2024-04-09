@@ -4,7 +4,7 @@ namespace Applikation_med_API.Models
 {
     public class Product
     {
-        //public Account Account { get; set; }
+        public Account Account { get; set; }
         [Key]
         public int ProductId { get; set; }
         public string Name { get; set; }
