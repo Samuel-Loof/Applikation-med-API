@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\zaaam\\source\\repos\\Applikation-Med-API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|c:\\users\\zaaam\\source\\repos\\applikation-med-api\\applikation med api\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|solutionrelative:applikation med api\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|c:\\users\\zaaam\\source\\repos\\applikation-med-api\\applikation med api\\models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|solutionrelative:applikation med api\\models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|c:\\users\\zaaam\\source\\repos\\applikation-med-api\\applikation med api\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|solutionrelative:applikation med api\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|c:\\users\\zaaam\\source\\repos\\applikation-med-api\\applikation med api\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|solutionrelative:applikation med api\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|c:\\users\\zaaam\\source\\repos\\applikation-med-api\\applikation med api\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|solutionrelative:applikation med api\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|c:\\users\\zaaam\\source\\repos\\applikation-med-api\\applikation med api\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|solutionrelative:applikation med api\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|c:\\users\\zaaam\\source\\repos\\applikation-med-api\\applikation med api\\pages\\shoppingcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -25,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|c:\\users\\zaaam\\source\\repos\\applikation-med-api\\applikation med api\\pages\\shoppingcart.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|solutionrelative:applikation med api\\pages\\shoppingcart.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|c:\\users\\zaaam\\source\\repos\\applikation-med-api\\applikation med api\\models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|solutionrelative:applikation med api\\models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8AF17D15-511C-4896-9859-C676EC4877B4}|Applikation med API\\Applikation med API.csproj|c:\\users\\zaaam\\source\\repos\\applikation-med-api\\applikation med api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -88,8 +92,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation-Med-API\\Applikation med API\\Pages\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Applikation med API\\Pages\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\zaaam\\source\\repos\\Applikation-Med-API\\Applikation med API\\Pages\\Index.cshtml.cs",
+              "RelativeToolTip": "Applikation med API\\Pages\\Index.cshtml.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABUAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T09:27:32.592Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
@@ -97,18 +114,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation-Med-API\\Applikation med API\\appsettings.json",
-              "RelativeDocumentMoniker": "Applikation med API\\appsettings.json",
-              "ToolTip": "C:\\Users\\zaaam\\source\\repos\\Applikation-Med-API\\Applikation med API\\appsettings.json",
-              "RelativeToolTip": "Applikation med API\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-09T09:17:38.778Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Account.cs",
               "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation-Med-API\\Applikation med API\\Models\\Account.cs",
               "RelativeDocumentMoniker": "Applikation med API\\Models\\Account.cs",
@@ -116,12 +121,11 @@
               "RelativeToolTip": "Applikation med API\\Models\\Account.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-09T09:17:12.035Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-09T09:17:12.035Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "ShoppingCart.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation-Med-API\\Applikation med API\\Pages\\ShoppingCart.cshtml.cs",
               "RelativeDocumentMoniker": "Applikation med API\\Pages\\ShoppingCart.cshtml.cs",
@@ -146,7 +150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "dbo.ShoppingCarts [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ExampleDatabase/True/SqlTable/dbo.ShoppingCarts.sql",
               "ToolTip": "dbo.ShoppingCarts [Data]",
@@ -155,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "dbo.Products [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ExampleDatabase/True/SqlTable/dbo.Products.sql",
               "ToolTip": "dbo.Products [Data]",
@@ -164,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "ShoppingCart.cshtml",
               "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation-Med-API\\Applikation med API\\Pages\\ShoppingCart.cshtml",
               "RelativeDocumentMoniker": "Applikation med API\\Pages\\ShoppingCart.cshtml",
@@ -176,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation-Med-API\\Applikation med API\\Models\\Product.cs",
               "RelativeDocumentMoniker": "Applikation med API\\Models\\Product.cs",
@@ -189,7 +193,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
+              "Title": "ShoppingCart.cs",
+              "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation-Med-API\\Applikation med API\\Models\\ShoppingCart.cs",
+              "RelativeDocumentMoniker": "Applikation med API\\Models\\ShoppingCart.cs",
+              "ToolTip": "C:\\Users\\zaaam\\source\\repos\\Applikation-Med-API\\Applikation med API\\Models\\ShoppingCart.cs",
+              "RelativeToolTip": "Applikation med API\\Models\\ShoppingCart.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T16:04:54.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation-Med-API\\Applikation med API\\appsettings.json",
+              "RelativeDocumentMoniker": "Applikation med API\\appsettings.json",
+              "ToolTip": "C:\\Users\\zaaam\\source\\repos\\Applikation-Med-API\\Applikation med API\\appsettings.json",
+              "RelativeToolTip": "Applikation med API\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-09T09:17:38.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation-Med-API\\Applikation med API\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Applikation med API\\Data\\AppDbContext.cs",
@@ -201,19 +230,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ShoppingCart.cs",
-              "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation-Med-API\\Applikation med API\\Models\\ShoppingCart.cs",
-              "RelativeDocumentMoniker": "Applikation med API\\Models\\ShoppingCart.cs",
-              "ToolTip": "C:\\Users\\zaaam\\source\\repos\\Applikation-Med-API\\Applikation med API\\Models\\ShoppingCart.cs",
-              "RelativeToolTip": "Applikation med API\\Models\\ShoppingCart.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABTAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T16:04:54.977Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "CartItem.cs",
               "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation-Med-API\\Applikation med API\\Models\\CartItem.cs",
               "RelativeDocumentMoniker": "Applikation med API\\Models\\CartItem.cs",
@@ -225,7 +242,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "SessionExtensions.cs",
               "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation-Med-API\\Applikation med API\\Extensions\\SessionExtensions.cs",
               "RelativeDocumentMoniker": "Applikation med API\\Extensions\\SessionExtensions.cs",
@@ -237,7 +254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "20240405190100_shoppingCart.cs",
               "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation med API\\Applikation med API\\Migrations\\20240405190100_shoppingCart.cs",
               "RelativeDocumentMoniker": "..\\Applikation med API\\Applikation med API\\Migrations\\20240405190100_shoppingCart.cs",
@@ -249,7 +266,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "20240405190136_shoppingCart.cs",
               "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation med API\\Applikation med API\\Migrations\\20240405190136_shoppingCart.cs",
               "RelativeDocumentMoniker": "..\\Applikation med API\\Applikation med API\\Migrations\\20240405190136_shoppingCart.cs",
@@ -261,7 +278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "dbo.CartItems [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ExampleDatabase/True/SqlTable/dbo.CartItems.sql",
               "ToolTip": "dbo.CartItems [Data]",
@@ -270,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation-Med-API\\Applikation med API\\Program.cs",
               "RelativeDocumentMoniker": "Applikation med API\\Program.cs",
@@ -282,7 +299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "dbo.Accounts [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ExampleDatabase/True/SqlTable/dbo.Accounts.sql",
               "ToolTip": "dbo.Accounts [Data]",
@@ -291,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "SampleData.cs",
               "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation-Med-API\\Applikation med API\\Data\\SampleData.cs",
               "RelativeDocumentMoniker": "Applikation med API\\Data\\SampleData.cs",
@@ -303,7 +320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "20240404145742_first.cs",
               "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation med API\\Applikation med API\\Migrations\\20240404145742_first.cs",
               "RelativeDocumentMoniker": "..\\Applikation med API\\Applikation med API\\Migrations\\20240404145742_first.cs",
@@ -315,7 +332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "20240404150705_first.cs",
               "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation med API\\Applikation med API\\Migrations\\20240404150705_first.cs",
               "RelativeDocumentMoniker": "..\\Applikation med API\\Applikation med API\\Migrations\\20240404150705_first.cs",
@@ -327,7 +344,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "20240404143214_first.cs",
               "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation med API\\Applikation med API\\Migrations\\20240404143214_first.cs",
               "RelativeDocumentMoniker": "..\\Applikation med API\\Applikation med API\\Migrations\\20240404143214_first.cs",
@@ -339,7 +356,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "20240404140739_SampleData.cs",
               "DocumentMoniker": "C:\\Users\\zaaam\\source\\repos\\Applikation med API\\Applikation med API\\Migrations\\20240404140739_SampleData.cs",
               "RelativeDocumentMoniker": "..\\Applikation med API\\Applikation med API\\Migrations\\20240404140739_SampleData.cs",

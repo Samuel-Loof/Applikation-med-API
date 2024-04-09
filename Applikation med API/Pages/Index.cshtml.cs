@@ -19,6 +19,7 @@ namespace Applikation_med_API.Pages
 
         // Property to hold products
         public IList<Product> Products { get; set; }
+        public List<Product> Cart {  get; set; } // Keeping this for now
 
         // Asynchronous method to load products from the database
         public async Task OnGetAsync()
