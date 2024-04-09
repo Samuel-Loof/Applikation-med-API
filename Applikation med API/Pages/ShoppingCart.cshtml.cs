@@ -13,7 +13,6 @@ namespace Applikation_med_API.Pages
         private readonly AppDbContext _database;
         private readonly AccessControl _accessControl;
 
-        //public List<Product> CartItems { get; set; } = new List<CartItem>();
         public List<CartItem> CartItems { get; set; } = new List<CartItem>();
 
         public CartModel(AppDbContext database, AccessControl accessControl)
