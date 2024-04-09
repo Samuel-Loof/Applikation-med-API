@@ -9,6 +9,8 @@ namespace Applikation_med_API.Models
         public int ProductId { get; set; }
         public string Name { get; set; }
 
+        public int AccountID { get; set; } // Might need this to connect the product to an account
+
         //[Required]
         //public string ImageFileName { get; set; } // Namn på bildfilen i undermapp till wwwroot
 
