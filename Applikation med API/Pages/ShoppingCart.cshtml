@@ -8,10 +8,10 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Product Name</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
+                <th>Produktnamn</th>
+                <th>Pris</th>
+                <th>Kvantitet</th>
+                <th>Totalt</th>
             </tr>
         </thead>
         <tbody>
@@ -19,14 +19,14 @@
             {
                 <tr>
                     <td>@product.Name</td>
-                    <td>@product.Price</td>
+                    <td>@(product.Price.ToString("0.##")) kr</td>
                     <td>@product.Quantity</td>
-                    <td>@(product.Price * product.Quantity)</td>
+                    <td>@((product.Price * product.Quantity).ToString("0.##")) kr</td>
                     <td>
                         <!-- Form to remove an item from the cart -->
-                        <form method="post" asp-page-handler="RemoveItem">
+                        <form method="post" asp-page-handler="RemoveProduct">
                             <input type="hidden" name="productId" value="@product.ID" />
-                            <button type="submit" class="btn btn-danger">Remove</button>
+                            <button type="submit" class="btn btn-danger">Ta bort produkt</button>
                         </form>
                     </td>
                 </tr>
@@ -36,10 +36,13 @@
 
     <!-- Form to clear the cart -->
     <form method="post" asp-page-handler="ClearCart">
-        <button type="submit" class="btn btn-warning">Clear Cart</button>
+        <button type="submit" class="btn btn-warning">Rensa varukorgen</button>
     </form>
 }
 else
 {
     <p>Din varukorg är tom.</p>
 }
+
+<!-- Button to go back to the main page -->
+<a href="/" class="btn btn-primary">Tillbaka till huvudsidan</a>

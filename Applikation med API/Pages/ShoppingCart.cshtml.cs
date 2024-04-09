@@ -12,7 +12,8 @@ namespace Applikation_med_API.Pages
         private readonly AppDbContext _database;
         private readonly AccessControl _accessControl;
 
-        public List<Product> CartItems { get; set; }
+        //public List<Product> CartItems { get; set; } = new List<CartItem>();
+        public List<CartItem> CartItems { get; set; } = new List<CartItem>();
 
         public CartModel(AppDbContext database, AccessControl accessControl)
         {
@@ -22,31 +23,37 @@ namespace Applikation_med_API.Pages
 
         public void OnGet()
         {
-            // Retrieve cart items for the logged-in user
-            CartItems = _database.Products.Where(p => p.AccountID == _accessControl.LoggedInAccountID).ToList();
+            int shoppingCartId = _accessControl.GetCurrentShoppingCartId();
+            // Retrieve cart items for the logged-in user's shopping cart
+            CartItems = _database.CartItems
+                                 .Where(ci => ci.ShoppingCartId == shoppingCartId)
+                                 .ToList();
         }
 
-        public IActionResult OnPostRemoveItem(int productId)
+        public IActionResult OnPostRemoveItem(int cartItemId)
         {
-            var productToRemove = _database.Products.FirstOrDefault(p => p.ID == productId && p.AccountID == _accessControl.LoggedInAccountID);
+            var cartItemToRemove = _database.CartItems.FirstOrDefault(ci => ci.ID == cartItemId && ci.ShoppingCartId == _accessControl.GetCurrentShoppingCartId());
 
-            if (productToRemove != null)
+            if (cartItemToRemove != null)
             {
-                // Logic to remove the product from the cart
-                _database.Products.Remove(productToRemove);
+                // Logic to remove the cart item from the cart
+                _database.CartItems.Remove(cartItemToRemove);
                 _database.SaveChanges();
             }
 
+            // currently when trying to remove a single item, temporary removes it,
+            // but when adding another item to the shopping cart it fetches the old items and adds another
             return RedirectToPage();
         }
 
         public IActionResult OnPostClearCart()
         {
-            var productsToRemove = _database.Products.Where(p => p.AccountID == _accessControl.LoggedInAccountID).ToList();
+            int shoppingCartId = _accessControl.GetCurrentShoppingCartId(); // Ensure this method exists and correctly fetches the ID
+            var cartItemsToRemove = _database.CartItems.Where(ci => ci.ShoppingCartId == shoppingCartId).ToList();
 
-            foreach (var product in productsToRemove)
+            foreach (var cartItem in cartItemsToRemove)
             {
-                _database.Products.Remove(product);
+                _database.CartItems.Remove(cartItem);
             }
             _database.SaveChanges();
 
