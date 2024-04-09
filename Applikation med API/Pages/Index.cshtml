@@ -15,9 +15,9 @@
     <ul>
         @foreach (var product in Model.Products)
         {
-            <img src="images/@product.ImagePath" alt="En bild av @product.Name style="width: 200px" />
             <li>
-                <h3>@product.Name</h3>          
+                <img src="images/@product.ImagePath" alt="En bild av @product.Name" style="width: 200px;" />
+                <h3>@product.Name</h3>
                 <p>@product.Description</p>
                 <p>Pris: @(product.Price.ToString("0.##")) kr</p>
                 <p>Kategori: @product.Category</p>
@@ -26,7 +26,6 @@
                     <input type="hidden" name="productId" value="@product.ID" />
                     <button type="submit">Lägg i varukorg</button>
                 </form>
-
             </li>
         }
     </ul>
