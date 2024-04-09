@@ -1,0 +1,72 @@
+﻿@page
+@model Applikation_med_API.Pages.CartModel
+
+<h2>Varukorg</h2>
+
+@if (Model.CartItems.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Namn</th>
+                <th>Styckpris</th>
+                <th>Kvantitet</th>
+                <th>Totalt</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.CartItems)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@(product.Price.ToString("0.##")) kr</td>
+                    <td>@product.Quantity</td>
+                    <td>@((product.Price * product.Quantity).ToString("0.##")) kr</td>
+
+
+                    <td>
+            <!-- Decrement quantity form -->
+            <form method="post" asp-page-handler="DecrementQuantity" style="display:inline">
+                <input type="hidden" name="cartItemId" value="@product.ID" />
+                <button type="submit" class="btn btn-secondary btn-sm">-</button>
+            </form>
+
+            @product.Quantity
+
+            <!-- Increment quantity form -->
+            <form method="post" asp-page-handler="IncrementQuantity" style="display:inline">
+                <input type="hidden" name="cartItemId" value="@product.ID" />
+                <button type="submit" class="btn btn-secondary btn-sm">+</button>
+            </form>
+        </td>
+        <td>@((product.Price * product.Quantity).ToString("0.##")) kr</td>
+
+                    <td>
+                        <!-- Form to remove an item from the cart -->
+                        <form method="post" asp-page-handler="RemoveProduct">
+                            <input type="hidden" name="productId" value="@product.ID" />
+                            <button type="submit" class="btn btn-danger">Ta bort produkt</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h3>Summa varukorg: <strong>@Model.CartItems.Sum(item => item.Price * item.Quantity).ToString("0.##") kr</strong></h3>
+
+    <!-- Form to clear the cart -->
+    <form method="post" asp-page-handler="ClearCart">
+        <button type="submit" class="btn btn-warning">Rensa varukorgen</button>
+    </form>
+}
+else
+{
+    <p>Din varukorg är tom.</p>
+}
+
+<a href="/OrderPage" class="btn btn-success">Gå vidare till utcheckning</a>
+
+
+<!-- Button to go back to the main page -->
+<a href="/" class="btn btn-primary">Tillbaka till huvudsidan</a>

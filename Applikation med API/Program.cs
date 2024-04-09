@@ -91,6 +91,14 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<AccessControl>();
 
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Adjust based on your requirements
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true; // Mark the session cookie as essential for the application
+});
+
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
@@ -108,6 +116,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+
+app.UseSession(); // Enable session middleware
 
 app.UseAuthentication();
 app.UseAuthorization();
