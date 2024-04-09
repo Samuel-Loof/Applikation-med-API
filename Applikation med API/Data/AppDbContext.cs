@@ -11,24 +11,34 @@ namespace Applikation_med_API.Data
         public DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
 
+
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)
         {
         }
 
         // Override the OnModelCreating method
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    base.OnModelCreating(modelBuilder);
+
+        //    modelBuilder.Entity<CartItem>()
+        //        .HasOne(ci => ci.ShoppingCart)
+        //        .WithMany(s => s.CartItems)
+        //        .HasForeignKey(ci => ci.ShoppingCartId)
+        //        .OnDelete(DeleteBehavior.Restrict); // Change to Restrict or NoAction
+        //}
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
-            // Configuring the one-to-many relationship between ShoppingCart and CartItem
-            modelBuilder.Entity<ShoppingCart>()
-                .HasMany(c => c.CartItems)
-                .WithOne() // Assuming no navigation property back to ShoppingCart in CartItem
-                .HasForeignKey(ci => ci.ShoppingCartId) // Ensure CartItem class has a ShoppingCartId property
-                .OnDelete(DeleteBehavior.Cascade); // Cascade delete items when a ShoppingCart is deleted
-
-            // Any other custom model configurations go here
+            modelBuilder.Entity<Product>()
+                .Property(p => p.Price)
+                .HasPrecision(18, 4); // Example: 18 total digits, 4 of which are after the decimal point
         }
+
+
+
+
+
     }
 }

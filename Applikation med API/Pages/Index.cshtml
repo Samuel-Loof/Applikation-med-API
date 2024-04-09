@@ -7,9 +7,9 @@
 
 <h1>Welcome, @accessControl.LoggedInAccountName!</h1>
 
-<a href="/ShoppingCart">View Shopping Cart</a> 
+<a href="/ShoppingCart">Visa varukorg</a>
 
-<h2>Products</h2>
+<h2>Sortiment</h2>
 @if (Model.Products != null && Model.Products.Count > 0)
 {
     <ul>
@@ -22,9 +22,9 @@
                 <p>Price: @product.Price</p>
                 <p>Category: @product.Category</p>
                 <!-- Add to cart button -->
-                <form method="post" asp-page="/ShoppingCart" asp-page-handler="OnPostAddToCartAsync">
-                    <input type="hidden" name="productId" value="@product.ProductId" />
-                    <button type="submit">Add to Cart</button>
+                <form method="post">
+                    <input type="hidden" name="productId" value="@product.ID" />
+                    <button type="submit">Lägg i varukorg</button>
                 </form>
             </li>
         }

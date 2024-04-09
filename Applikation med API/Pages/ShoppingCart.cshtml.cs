@@ -1,93 +1,56 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Collections.Generic; 
-using Applikation_med_API.Models;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Http;
-using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Linq;
 using Applikation_med_API.Data;
-using System.Security.Claims;
-using Applikation_med_API.Extensions;
+using Applikation_med_API.Models;
 
 namespace Applikation_med_API.Pages
 {
     public class CartModel : PageModel
     {
-        private readonly AppDbContext _context;
+        private readonly AppDbContext _database;
+        private readonly AccessControl _accessControl;
 
-        private int GetUserAccountId()
+        public List<Product> CartItems { get; set; }
+
+        public CartModel(AppDbContext database, AccessControl accessControl)
         {
-            string currentUserOpenIDIssuer = "https://example.com"; 
-            string currentUserOpenIDSubject = User.FindFirst(ClaimTypes.NameIdentifier)?.Value; 
-
-            var account = _context.Accounts.FirstOrDefault(a => a.OpenIDIssuer == currentUserOpenIDIssuer && a.OpenIDSubject == currentUserOpenIDSubject);
-            return account?.ID ?? 0;
+            _database = database;
+            _accessControl = accessControl;
         }
-
-        public CartModel(AppDbContext context) 
-        {
-            _context = context;
-        }
-        public List<CartItem> CartItems { get; set; } // List to display items in the shopping cart
 
         public void OnGet()
         {
-            // Ensure CartItems is always initialized
-            CartItems = HttpContext.Session.GetObjectFromJson<List<CartItem>>("Cart") ?? new List<CartItem>();
-        }
-
- 
-        public async Task<IActionResult> OnPostAddToCartAsync(int productId)
-        {
-            int userAccountId = GetUserAccountId();
-            if (userAccountId == 0)
-            {
-                return RedirectToPage();
-            }
-
-            var cart = await _context.ShoppingCarts
-                                     .Include(c => c.CartItems)
-                                     .FirstOrDefaultAsync(c => c.AccountId == userAccountId);
-
-            var product = await _context.Products.FindAsync(productId);
-            if (product == null) return Page();
-
-            if (cart == null)
-            {
-                cart = new ShoppingCart { AccountId = userAccountId };
-                _context.ShoppingCarts.Add(cart);
-                await _context.SaveChangesAsync();
-            }
-
-            var item = cart.CartItems.FirstOrDefault(i => i.ProductId == productId);
-            if (item != null)
-            {
-                item.Quantity += 1; // Increment quantity by 1
-            }
-            else
-            {
-                // Add new item to the cart with a quantity of 1
-                cart.CartItems.Add(new CartItem { ProductId = productId, Name = product.Name, Price = product.Price, Quantity = 1 });
-            }
-
-            await _context.SaveChangesAsync();
-            return RedirectToPage();
-        }
-
-
-
-        public IActionResult OnPostRemoveAll()
-        {
-            HttpContext.Session.Remove("Cart");
-            return RedirectToPage(); // Refresh the page to show the empty cart
+            // Retrieve cart items for the logged-in user
+            CartItems = _database.Products.Where(p => p.AccountID == _accessControl.LoggedInAccountID).ToList();
         }
 
         public IActionResult OnPostRemoveItem(int productId)
         {
-            var cart = HttpContext.Session.GetObjectFromJson<List<CartItem>>("Cart") ?? new List<CartItem>();
-            cart.RemoveAll(x => x.ProductId == productId);
-            HttpContext.Session.SetObjectAsJson("Cart", cart);
-            return RedirectToPage(); 
+            var productToRemove = _database.Products.FirstOrDefault(p => p.ID == productId && p.AccountID == _accessControl.LoggedInAccountID);
+
+            if (productToRemove != null)
+            {
+                // Logic to remove the product from the cart
+                _database.Products.Remove(productToRemove);
+                _database.SaveChanges();
+            }
+
+            return RedirectToPage();
+        }
+
+        public IActionResult OnPostClearCart()
+        {
+            var productsToRemove = _database.Products.Where(p => p.AccountID == _accessControl.LoggedInAccountID).ToList();
+
+            foreach (var product in productsToRemove)
+            {
+                _database.Products.Remove(product);
+            }
+            _database.SaveChanges();
+
+            return RedirectToPage();
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿@page
 @model Applikation_med_API.Pages.CartModel
 
-<h2>Shopping Cart</h2>
+<h2>Varukorg</h2>
 
 @if (Model.CartItems.Count > 0)
 {
@@ -15,17 +15,17 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.CartItems)
+            @foreach (var product in Model.CartItems)
             {
                 <tr>
-                    <td>@item.Name</td>
-                    <td>@item.Price</td>
-                    <td>@item.Quantity</td>
-                    <td>@item.Price * @item.Quantity</td>
+                    <td>@product.Name</td>
+                    <td>@product.Price</td>
+                    <td>@product.Quantity</td>
+                    <td>@(product.Price * product.Quantity)</td>
                     <td>
                         <!-- Form to remove an item from the cart -->
                         <form method="post" asp-page-handler="RemoveItem">
-                            <input type="hidden" name="productId" value="@item.ProductId" />
+                            <input type="hidden" name="productId" value="@product.ID" />
                             <button type="submit" class="btn btn-danger">Remove</button>
                         </form>
                     </td>
@@ -34,9 +34,12 @@
         </tbody>
     </table>
 
-    <!-- add a form or button here to clear the cart -->
+    <!-- Form to clear the cart -->
+    <form method="post" asp-page-handler="ClearCart">
+        <button type="submit" class="btn btn-warning">Clear Cart</button>
+    </form>
 }
 else
 {
-    <p>Your shopping cart is empty.</p>
+    <p>Din varukorg är tom.</p>
 }

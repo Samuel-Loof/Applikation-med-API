@@ -1,6 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Applikation_med_API.Models
 {
@@ -8,16 +7,16 @@ namespace Applikation_med_API.Models
     {
         [Key]
         public int Id { get; set; }
-        public int AccountId { get; set; } // Link to Account
 
-        //public virtual List<CartItem> Items { get; set; } = new List<CartItem>();
-
-
-        // Initializes CartItems as a new List<CartItem> to prevent null references
+        // This correctly establishes the relationship between ShoppingCart and CartItem
         public List<CartItem> CartItems { get; set; } = new List<CartItem>();
 
-        [ForeignKey("AccountId")]
-        public virtual Account Account { get; set; }
-    }
+        [Range(1, 100, ErrorMessage = "Please select a number between 1 and 100")]
+        public int count { get; set; }
 
+        // Foreign key to Account
+        public int AccountId { get; set; }
+
+        public Account Account { get; set; }
+    }
 }
