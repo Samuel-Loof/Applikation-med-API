@@ -43,7 +43,6 @@ namespace Applikation_med_API.Pages
                                       .ToListAsync();
 
             // Fetching cart items
-            //Products = await _database.Products.OrderBy(p => p.Name).ToListAsync(); //redundant ??
 
             int shoppingCartId = _accessControl.GetCurrentShoppingCartId();
             CartItems = await _database.CartItems
