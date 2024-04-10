@@ -18,15 +18,32 @@ namespace Applikation_med_API.Pages
         public List<CartItem> CartItems;
         public List<Product> Cart;
 
+        public int CurrentPage { get; set; } = 1;
+        public int TotalPages { get; set; }
+
+
         public IndexModel(AppDbContext database, AccessControl accessControl)
         {
             _database = database;
             _accessControl = accessControl;
         }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(int currentPage = 1)
         {
-            Products = await _database.Products.OrderBy(p => p.Name).ToListAsync();
+            // Pagination 
+            const int PageSize = 10;
+            var totalProductsCount = await _database.Products.CountAsync();
+            TotalPages = (int)Math.Ceiling(totalProductsCount / (double)PageSize);
+            CurrentPage = currentPage;
+
+            Products = await _database.Products
+                                      .OrderBy(p => p.Name)
+                                      .Skip((currentPage - 1) * PageSize)
+                                      .Take(PageSize)
+                                      .ToListAsync();
+
+            // Fetching cart items
+            //Products = await _database.Products.OrderBy(p => p.Name).ToListAsync(); //redundant ??
 
             int shoppingCartId = _accessControl.GetCurrentShoppingCartId();
             CartItems = await _database.CartItems
@@ -72,4 +89,5 @@ namespace Applikation_med_API.Pages
         }
 
     }
+
 }
