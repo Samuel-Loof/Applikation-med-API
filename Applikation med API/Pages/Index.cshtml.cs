@@ -22,14 +22,25 @@ namespace Applikation_med_API.Pages
         public int TotalPages { get; set; }
 
 
+        public string CurrentFilter { get; set; }
+        public List<string> Categories { get; set; } = new List<string>();
+
+
         public IndexModel(AppDbContext database, AccessControl accessControl)
         {
             _database = database;
             _accessControl = accessControl;
         }
 
-        public async Task OnGetAsync(int currentPage = 1)
+        public async Task OnGetAsync(string name, string category, int currentPage = 1)
         {
+            CurrentFilter = name;
+
+            //Fetch and set categories from the database to the dropdown
+            // Distinct removes the duplicate elements from a sequence (list) and returns the distinct elements from a single data source
+            Categories = await _database.Products.Select(p => p.Category).Distinct().ToListAsync();
+
+
             // Pagination 
             const int PageSize = 10;
             var totalProductsCount = await _database.Products.CountAsync();

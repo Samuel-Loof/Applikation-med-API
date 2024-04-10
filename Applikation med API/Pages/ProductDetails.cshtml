@@ -1,0 +1,25 @@
+﻿<h2>Sortiment</h2>
+@if (Model.Products != null && Model.Products.Count > 0)
+{
+    <ul>
+        @foreach (var product in Model.Products)
+        {
+            <li>
+                <img src="images/@product.ImagePath" alt="En bild av @product.Name" style="width: 200px;" />
+                <h3>@product.Name</h3>
+                <p>@product.Description</p>
+                <p>Pris: @(product.Price.ToString("0.##")) kr</p>
+                <p>Kategori: @product.Category</p>
+                <!-- Add to cart button -->
+                <form method="post">
+                    <input type="hidden" name="productId" value="@product.ID" />
+                    <button type="submit">Lägg i varukorg</button>
+                </form>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>Hittade inga produkter.</p>
+}
