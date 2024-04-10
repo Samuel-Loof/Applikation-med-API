@@ -42,7 +42,7 @@
         <td>@((product.Price * product.Quantity).ToString("0.##")) kr</td>
 
                     <td>
-                        <!-- Form to remove an item from the cart -->
+                        <!-- Form to remove an item from the cart [Currently doesn't work] -->
                         <form method="post" asp-page-handler="RemoveProduct">
                             <input type="hidden" name="productId" value="@product.ID" />
                             <button type="submit" class="btn btn-danger">Ta bort produkt</button>
@@ -65,7 +65,7 @@ else
     <p>Din varukorg är tom.</p>
 }
 
-<a href="/OrderPage" class="btn btn-success">Gå vidare till utcheckning</a>
+<a asp-page="/OrderConfirmation" class="btn btn-success">Slutför köp</a>
 
 
 <!-- Button to go back to the main page -->
