@@ -27,6 +27,7 @@ namespace Applikation_med_API.Pages
             // Retrieve cart items for the logged-in user's shopping cart
             CartItems = _database.CartItems
                                  .Where(ci => ci.ShoppingCartId == shoppingCartId)
+                                 .Include(p => p.Product)
                                  .ToList();
         }
 
