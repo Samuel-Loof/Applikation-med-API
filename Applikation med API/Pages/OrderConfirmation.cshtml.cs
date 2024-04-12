@@ -9,7 +9,7 @@ public class OrderConfirmationModel : PageModel
     private readonly AppDbContext _database;
     private readonly AccessControl _accessControl;
 
-    public List<CartItem> CartItems { get; set; } = new List<CartItem>();
+    public List<CartItem> OrderItems { get; set; } = new List<CartItem>(); //OrderItem?
     public decimal TotalPrice { get; set; }
 
     public OrderConfirmationModel(AppDbContext database, AccessControl accessControl)
@@ -22,11 +22,11 @@ public class OrderConfirmationModel : PageModel
     {
         int shoppingCartId = _accessControl.GetCurrentShoppingCartId();
         // Retrieve cart items for the logged-in user's shopping cart
-        CartItems = _database.CartItems
+        OrderItems = _database.CartItems
                               .Include(ci => ci.Product) // Assuming you need product details
                               .Where(ci => ci.ShoppingCartId == shoppingCartId)
                               .ToList();
 
-        TotalPrice = CartItems.Sum(item => item.Price * item.Quantity);
+        TotalPrice = OrderItems.Sum(item => item.Price * item.Quantity);
     }
 }

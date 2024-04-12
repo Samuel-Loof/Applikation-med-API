@@ -26,7 +26,7 @@ namespace Applikation_med_API.Pages
         //{
         //    int shoppingCartId = _accessControl.GetCurrentShoppingCartId();
         //    // Retrieve cart items for the logged-in user's shopping cart
-        //    CartItems = _database.CartItems
+        //    OrderItems = _database.OrderItems
         //                         .Where(ci => ci.ShoppingCartId == shoppingCartId)
         //                         .ToList();
         //}
