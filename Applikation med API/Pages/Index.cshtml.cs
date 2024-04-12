@@ -34,11 +34,14 @@ namespace Applikation_med_API.Pages
 
         public async Task OnGetAsync(string name, string category, int currentPage = 1)
         {
-            CurrentFilter = name;
+            //CurrentFilter = name;
+            ViewData["CurrentFilter"] = name;
 
             //Fetch and set categories from the database to the dropdown
             // Distinct removes the duplicate elements from a sequence (list) and returns the distinct elements from a single data source
-            Categories = await _database.Products.Select(p => p.Category).Distinct().ToListAsync();
+
+            //Categories = await _database.Products.Select(p => p.Category).Distinct().ToListAsync();
+            ViewData["Categories"] = await _database.Products.Select(p => p.Category).Distinct().ToListAsync();
 
             // Sets up a queryable object that allows further actions like filterning and ordering.
             IQueryable<Product> productQuery = _database.Products;
@@ -80,7 +83,7 @@ namespace Applikation_med_API.Pages
 
         public async Task<IActionResult> OnPostAsync(int productId)
         {
-            // Assuming _accessControl has a way to get the current ShoppingCartId
+            //get the current ShoppingCartId
             int shoppingCartId = _accessControl.GetCurrentShoppingCartId();
 
             var existingCartItem = await _database.CartItems

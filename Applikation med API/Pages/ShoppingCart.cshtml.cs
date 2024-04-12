@@ -13,6 +13,7 @@ namespace Applikation_med_API.Pages
         private readonly AppDbContext _database;
         private readonly AccessControl _accessControl;
 
+        public ShoppingCart ShoppingCart { get; set; }
         public List<CartItem> CartItems { get; set; } = new List<CartItem>();
 
         public CartModel(AppDbContext database, AccessControl accessControl)
@@ -21,13 +22,24 @@ namespace Applikation_med_API.Pages
             _accessControl = accessControl;
         }
 
-        public void OnGet()
+        //public void OnGet()
+        //{
+        //    int shoppingCartId = _accessControl.GetCurrentShoppingCartId();
+        //    // Retrieve cart items for the logged-in user's shopping cart
+        //    CartItems = _database.CartItems
+        //                         .Where(ci => ci.ShoppingCartId == shoppingCartId)
+        //                         .ToList();
+        //}
+
+        public async Task OnGetAsync()
         {
             int shoppingCartId = _accessControl.GetCurrentShoppingCartId();
-            // Retrieve cart items for the logged-in user's shopping cart
-            CartItems = _database.CartItems
-                                 .Where(ci => ci.ShoppingCartId == shoppingCartId)
-                                 .ToList();
+            ShoppingCart = await _database.ShoppingCarts
+                                          .Include(sc => sc.CartItems)
+                                          .ThenInclude(ci => ci.Product)
+                                          .FirstOrDefaultAsync(sc => sc.ID == shoppingCartId);
+
+            CartItems = ShoppingCart?.CartItems ?? new List<CartItem>();
         }
 
         public async Task<IActionResult> OnPostRemoveProduct(int cartItemId)
@@ -37,7 +49,6 @@ namespace Applikation_med_API.Pages
 
             if (cartItem != null)
             {
-                // Logic to remove the cart item from the cart
                 _database.CartItems.Remove(cartItem);
                 await _database.SaveChangesAsync();
             }
@@ -45,10 +56,9 @@ namespace Applikation_med_API.Pages
             return RedirectToPage();
         }
 
-
         public IActionResult OnPostClearCart()
         {
-            int shoppingCartId = _accessControl.GetCurrentShoppingCartId(); // Ensure this method exists and correctly fetches the ID
+            int shoppingCartId = _accessControl.GetCurrentShoppingCartId();
             var cartItemsToRemove = _database.CartItems.Where(ci => ci.ShoppingCartId == shoppingCartId).ToList();
 
             foreach (var cartItem in cartItemsToRemove)
@@ -71,7 +81,6 @@ namespace Applikation_med_API.Pages
             return RedirectToPage();
         }
 
-
         public async Task<IActionResult> OnPostDecrementQuantity(int cartItemId)
         {
             var cartItem = await _database.CartItems.FindAsync(cartItemId);
@@ -79,19 +88,15 @@ namespace Applikation_med_API.Pages
             {
                 if (cartItem.Quantity > 1)
                 {
-                    // If quantity is greater than 1, decrement it
                     cartItem.Quantity -= 1;
                 }
                 else
                 {
-                    // If quantity is 1, remove the item from the cart
                     _database.CartItems.Remove(cartItem);
                 }
                 await _database.SaveChangesAsync();
             }
             return RedirectToPage();
         }
-
-
     }
 }

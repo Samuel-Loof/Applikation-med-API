@@ -4,7 +4,7 @@
 <h2>Orderbekräftelse</h2>
 <p>Tack för ditt köp! Här är detaljerna för din beställning:</p>
 
-@if (Model.OrderItems != null && Model.OrderItems.Count > 0)
+@if (Model.CartItems != null && Model.CartItems.Count > 0)
 {
     <table class="table">
         <thead>
@@ -16,7 +16,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.OrderItems)
+            @foreach (var item in Model.CartItems)
             {
                 <tr>
                     <td>@item.Name</td>

@@ -1,6 +1,4 @@
-﻿@using Applikation_med_API.Pages.Shared.Components.LoginMenu;
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,11 +10,57 @@
 </head>
 <body>
     <header>
-        <environment names="Development">
-            @await Component.InvokeAsync(nameof(FakeLoginMenu))
-        </environment>
+        <nav class="navbar">
+            <div class="container">
+                <a href="/" class="navbar-brand">Gabriel & Samuels Webbutik</a>
+                <div class="navbar-right">
+                    <!-- Integration of the FakeLoginMenu component within the navbar -->
+                    @await Component.InvokeAsync("FakeLoginMenu")
+
+
+                    <!-- Search Form -->
+                    <form class="search-form" method="get">
+                        <input type="text" name="name" placeholder="Sök efter produkt..." value="@ViewData["CurrentFilter"]?.ToString()" />
+                        <select name="category">
+                            <option value="">Alla kategorier</option>
+                            @foreach (var category in (ViewData["Categories"] as List<string>) ?? new List<string>())
+                            {
+                                <option value="@category">@category</option>
+                            }
+                        </select>
+                        <button type="submit">Sök</button>
+                    </form>
+                    <!-- Trigger/Open The Modal -->
+                    <a href="#cartModal" class="cart-button">Visa varukorg</a>
+                </div>
+            </div>
+        </nav>
     </header>
-    <main>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <a href="#" class="close">&times; Stäng varukorg</a>
+            <h2>Din varukorg</h2>
+            <ul>
+                @foreach (var item in Model.CartItems)
+                {
+                    <li>
+                        <img src="@Url.Content($"~/images/{item?.Product?.ImagePath ?? "default.png"}")" alt="Image of @(item?.Product?.Name)">
+                        <div class="item-details">
+                            <span><strong>@(item.Product.Name)</strong></span>
+                            <span>@item.Quantity st @((item.Quantity ?? 0) * (item.Product?.Price ?? 0.0m)) kr</span>
+                        </div>
+                    </li>
+                }
+            </ul>
+
+            <button>
+            <a href="/ShoppingCart" class="go-to-checkout">Gå till kassan</a>
+            </button>
+        </div>
+    </div>
+
+    <main role="main">
         @RenderBody()
     </main>
 </body>

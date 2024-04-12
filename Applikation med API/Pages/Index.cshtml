@@ -7,21 +7,6 @@
 
 <h1>Welcome, @accessControl.LoggedInAccountName!</h1>
 
-<form method="get">
-    <input type="text" name="name" placeholder="Sök efter produkt..." value="@Model.CurrentFilter" />
-    <select name="category">
-        <option value="">Alla kategorier</option>
-        @foreach (var category in Model.Categories)
-        {
-            <option value="@category">@category</option>
-        }
-    </select>
-    <button type="submit">Sök</button>
-</form>
-
-
-<a href="/ShoppingCart">Visa varukorg</a>
-
 
 <ul>
     @foreach (var product in Model.Products)
@@ -31,6 +16,11 @@
                 <img src="@product.ImagePath" alt="Image of @product.Name" />
                 <h3>@product.Name</h3>
                 <p>@product.Price kr</p>
+                <!-- Add to cart button -->
+                <form method="post">
+                    <input type="hidden" name="productId" value="@product.ID" />
+                    <button type="submit">Lägg i varukorg</button>
+                </form>
             </a>
         </li>
     }
