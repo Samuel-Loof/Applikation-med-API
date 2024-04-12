@@ -8,7 +8,7 @@
 <h1>Welcome, @accessControl.LoggedInAccountName!</h1>
 
 <form method="get">
-    <input type="text" name="name" placeholder="Sök efter namn..." value="@Model.CurrentFilter" />
+    <input type="text" name="name" placeholder="Sök efter produkt..." value="@Model.CurrentFilter" />
     <select name="category">
         <option value="">Alla kategorier</option>
         @foreach (var category in Model.Categories)

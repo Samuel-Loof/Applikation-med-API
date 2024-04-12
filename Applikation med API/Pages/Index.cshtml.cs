@@ -40,6 +40,22 @@ namespace Applikation_med_API.Pages
             // Distinct removes the duplicate elements from a sequence (list) and returns the distinct elements from a single data source
             Categories = await _database.Products.Select(p => p.Category).Distinct().ToListAsync();
 
+            // Sets up a queryable object that allows further actions like filterning and ordering.
+            IQueryable<Product> productQuery = _database.Products;
+
+            //If there's an input, check which product name contain the substring provided
+            if(!string.IsNullOrEmpty(name))
+            {
+                productQuery = productQuery.Where(p => EF.Functions.Like(p.Name, $"%{name}%"));
+            }
+
+
+            //category filter
+            if(!string.IsNullOrEmpty(category))
+            {
+                productQuery = productQuery.Where(p => p.Category == category);
+            }
+
 
             // Pagination 
             const int PageSize = 10;
@@ -47,14 +63,13 @@ namespace Applikation_med_API.Pages
             TotalPages = (int)Math.Ceiling(totalProductsCount / (double)PageSize);
             CurrentPage = currentPage;
 
-            Products = await _database.Products
+            Products = await productQuery
                                       .OrderBy(p => p.Name)
                                       .Skip((currentPage - 1) * PageSize)
                                       .Take(PageSize)
                                       .ToListAsync();
 
             // Fetching cart items
-
             int shoppingCartId = _accessControl.GetCurrentShoppingCartId();
             CartItems = await _database.CartItems
                                        .Where(c => c.ShoppingCartId == shoppingCartId)
