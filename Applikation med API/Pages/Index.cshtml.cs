@@ -74,10 +74,12 @@ namespace Applikation_med_API.Pages
 
             // Fetching cart items
             int shoppingCartId = _accessControl.GetCurrentShoppingCartId();
-            CartItems = await _database.CartItems
+            var CartItems = await _database.CartItems
                                        .Where(c => c.ShoppingCartId == shoppingCartId)
                                        .Include(c => c.Product)
                                        .ToListAsync();
+
+            ViewData["CartItems"] = CartItems; //Store the cart items in ViewData
         }
 
 

@@ -14,13 +14,13 @@
             <div class="container">
                 <a href="/" class="navbar-brand">Gabriel & Samuels Webbutik</a>
                 <div class="navbar-right">
-                    <!-- Integration of the FakeLoginMenu component within the navbar -->
+
                     @await Component.InvokeAsync("FakeLoginMenu")
 
 
                     <!-- Search Form -->
                     <form class="search-form" method="get">
-                        <input type="text" name="name" placeholder="Sök efter produkt..." value="@ViewData["CurrentFilter"]?.ToString()" />
+                        <input type="text" name="name" placeholder="Sök efter produkt..." value="@ViewData["CurrentFilter"]?.ToString()" autofocus />
                         <select name="category">
                             <option value="">Alla kategorier</option>
                             @foreach (var category in (ViewData["Categories"] as List<string>) ?? new List<string>())
@@ -42,23 +42,26 @@
             <a href="#" class="close">&times; Stäng varukorg</a>
             <h2>Din varukorg</h2>
             <ul>
-                @foreach (var item in Model.CartItems)
+                @if (ViewData["CartItems"] is List<CartItem> cartItems && cartItems.Any())
                 {
-                    <li>
-                        <img src="@Url.Content($"~/images/{item?.Product?.ImagePath ?? "default.png"}")" alt="Image of @(item?.Product?.Name)">
-                        <div class="item-details">
-                            <span><strong>@(item.Product.Name)</strong></span>
-                            <span>@item.Quantity st @((item.Quantity ?? 0) * (item.Product?.Price ?? 0.0m)) kr</span>
-                        </div>
-                    </li>
+                    foreach (var item in cartItems)
+                    {
+                        <li>
+                            <img src="@Url.Content($"~/images/{item?.Product?.ImagePath ?? "default.png"}")" alt="Image of @(item?.Product?.Name)">
+                            <div class="item-details">
+                                <span><strong>@(item.Product.Name)</strong></span>
+                                <span>@item.Quantity st @((item.Quantity) * (item.Product?.Price ?? 0.0m)) kr</span>
+                            </div>
+                        </li>
+                    }
                 }
             </ul>
-
             <button>
-            <a href="/ShoppingCart" class="go-to-checkout">Gå till kassan</a>
+                <a href="/ShoppingCart" class="go-to-checkout">Gå till kassan</a>
             </button>
         </div>
     </div>
+
 
     <main role="main">
         @RenderBody()
