@@ -1,15 +1,22 @@
 ﻿@page
 @model OrderConfirmationModel
 
-<h2>Orderbekräftelse</h2>
-<p>Tack för ditt köp! Här är detaljerna för din beställning:</p>
-
+@if (TempData["Message"] != null || Model.OrderItems.Count < 0)
+{
+    <div class="alert alert-info">
+        @TempData["Message"]
+    </div>
+}
+@if (Model.OrderItems.Count > 0)
+{
+    <h2>Orderbekräftelse</h2>
+    <p>Tack för ditt köp! Här är detaljerna för din beställning:</p>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Produktnamn</th>
-                <th>Pris</th>
+                <th>Pris per styck</th>
                 <th>Kvantitet</th>
                 <th>Totalt</th>
             </tr>
@@ -18,10 +25,10 @@
             @foreach (var item in Model.OrderItems)
             {
                 <tr>
-                    <td>@item.Name</td>
-                    <td>@(item.Price.ToString("0.##")) kr</td>
+                    <td>@item.Product.Name</td>
+                    <td>@item.Product.Price.ToString("0.##") kr</td>
                     <td>@item.Quantity</td>
-                    <td>@((item.Price * item.Quantity).ToString("0.##")) kr</td>
+                    <td>@((item.Quantity * item.Product.Price).ToString("0.##")) kr</td>
                 </tr>
             }
             <tr>
@@ -30,8 +37,7 @@
             </tr>
         </tbody>
     </table>
+
+    <!-- Button to return to the main page -->
+    <a href="/" class="btn btn-primary">Tillbaka till huvudsidan</a>
 }
-
-
-<!-- Button to return to the main page -->
-<a href="/" class="btn btn-primary">Tillbaka till huvudsidan</a>
