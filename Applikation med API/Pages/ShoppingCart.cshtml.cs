@@ -22,24 +22,23 @@ namespace Applikation_med_API.Pages
             _accessControl = accessControl;
         }
 
-        //public void OnGet()
-        //{
-        //    int shoppingCartId = _accessControl.GetCurrentShoppingCartId();
-        //    // Retrieve cart items for the logged-in user's shopping cart
-        //    OrderItems = _database.OrderItems
-        //                         .Where(ci => ci.ShoppingCartId == shoppingCartId)
-        //                         .ToList();
-        //}
-
         public async Task OnGetAsync()
         {
             int shoppingCartId = _accessControl.GetCurrentShoppingCartId();
+
             ShoppingCart = await _database.ShoppingCarts
                                           .Include(sc => sc.CartItems)
                                           .ThenInclude(ci => ci.Product)
                                           .FirstOrDefaultAsync(sc => sc.ID == shoppingCartId);
 
             CartItems = ShoppingCart?.CartItems ?? new List<CartItem>();
+
+            // Retrieve cart items for the logged-in user's shopping cart
+            CartItems = _database.CartItems
+                                 .Where(ci => ci.ShoppingCartId == shoppingCartId)
+                                 .Include(p => p.Product)
+                                 .ToList();
+
         }
 
         public async Task<IActionResult> OnPostRemoveProduct(int cartItemId)

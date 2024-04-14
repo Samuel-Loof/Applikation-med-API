@@ -104,6 +104,7 @@ namespace Applikation_med_API.Pages
                 {
                     var newCartItem = new CartItem
                     {
+                        ImagePath = product.ImagePath,
                         ProductId = productId,
                         ShoppingCartId = shoppingCartId,
                         Name = product.Name,

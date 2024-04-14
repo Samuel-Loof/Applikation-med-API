@@ -9,6 +9,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th>Bild</th>
                 <th>Namn</th>
                 <th>Styckpris</th>
                 <th>Antal</th>
@@ -19,10 +20,14 @@
             @foreach (var product in Model.CartItems)
             {
                 <tr>
+                    <td><img src="images/@product.ImagePath" style="width: 50px;" /></td>
                     <td>@product.Name</td>
                     <td>@(product.Price.ToString("0.##")) kr</td>
                     <td>@product.Quantity</td>
                     <td>@((product.Price * product.Quantity).ToString("0.##")) kr</td>
+                    
+                    
+                    
 
 
                     <td>
