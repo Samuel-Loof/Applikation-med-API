@@ -1,0 +1,27 @@
+﻿@page
+@model ProductDetailsModel
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<h1>Product Detaljer</h1>
+
+@if (Model.Product != null)
+{
+    <div>
+        <h2>@Model.Product.Name</h2>
+        <img src="images/@Model.Product.ImagePath" alt="En bild av @Model.Product.Name" style="width: 200px;" />
+        <p>Pris: @(Model.Product.Price.ToString("0.##")) kr</p>
+        <p>Kategori: @Model.Product.Category</p>
+        <p>@Model.Product.Description</p>
+        
+        <form method="post">
+            <input type="hidden" name="productId" value="@Model.Product.ID" />
+            <button type="submit">Lägg i varukorg</button>
+        </form>
+
+        <form method="get" action="/Index">
+            <button type="submit" class="btn btn-secondary">Tillbaka till huvudsidan</button> 
+        </form>
+    </div>
+}

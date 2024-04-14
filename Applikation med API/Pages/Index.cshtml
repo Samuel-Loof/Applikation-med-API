@@ -16,11 +16,11 @@
         @foreach (var product in Model.Products)
         {
             <li>
+                <a asp-page="/ProductDetails" asp-route-id="@product.ID">
                 <img src="images/@product.ImagePath" alt="En bild av @product.Name" style="width: 200px;" />
-                <h3>@product.Name</h3>
-                <p>@product.Description</p>
+                </a>
+                <h3><a asp-page="/ProductDetails" asp-route-id="@product.ID">@product.Name</a></h3>
                 <p>Pris: @(product.Price.ToString("0.##")) kr</p>
-                <p>Kategori: @product.Category</p>
                 <!-- Add to cart button -->
                 <form method="post">
                     <input type="hidden" name="productId" value="@product.ID" />
@@ -34,7 +34,7 @@ else
 {
     <p>Hittade inga produkter.</p>
 }
-
+                
 <!-- pagination-->
 <nav aria-label="Page navigation">
     <ul class="pagination">
