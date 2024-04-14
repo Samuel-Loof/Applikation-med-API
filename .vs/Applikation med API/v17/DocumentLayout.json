@@ -109,7 +109,7 @@
               "RelativeDocumentMoniker": "Applikation med API\\Pages\\OrderConfirmation.cshtml.cs",
               "ToolTip": "C:\\Users\\zaaam\\source\\repos\\Applikation med API\\Applikation med API\\Pages\\OrderConfirmation.cshtml.cs",
               "RelativeToolTip": "Applikation med API\\Pages\\OrderConfirmation.cshtml.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAAwCUAAABIAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAAAmwA0AAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-10T15:56:04.507Z",
               "EditorCaption": ""
@@ -122,7 +122,7 @@
               "RelativeDocumentMoniker": "Applikation med API\\Pages\\OrderConfirmation.cshtml",
               "ToolTip": "C:\\Users\\zaaam\\source\\repos\\Applikation med API\\Applikation med API\\Pages\\OrderConfirmation.cshtml",
               "RelativeToolTip": "Applikation med API\\Pages\\OrderConfirmation.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABEAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-10T15:33:34.407Z",
               "EditorCaption": ""
@@ -161,8 +161,7 @@
               "RelativeToolTip": "Applikation med API\\Pages\\ShoppingCart.cshtml.cs",
               "ViewState": "AQIAAEgAAAAAAAAAAAA5wCwAAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-09T18:08:50.333Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-09T18:08:50.333Z"
             },
             {
               "$type": "Document",
@@ -174,8 +173,7 @@
               "RelativeToolTip": "Applikation med API\\Pages\\ShoppingCart.cshtml",
               "ViewState": "AQIAAAcAAAAAAAAAAADwvzMAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-09T18:12:18.241Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-09T18:12:18.241Z"
             },
             {
               "$type": "Document",
@@ -187,8 +185,7 @@
               "RelativeToolTip": "Applikation med API\\Pages\\ProductDetails.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-10T18:53:20.149Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-10T18:53:20.149Z"
             },
             {
               "$type": "Document",

@@ -1,12 +1,7 @@
 ﻿@page
 @model OrderConfirmationModel
 
-@if (TempData["Message"] != null || Model.OrderItems.Count < 0)
-{
-    <div class="alert alert-info">
-        @TempData["Message"]
-    </div>
-}
+
 @if (Model.OrderItems.Count > 0)
 {
     <h2>Orderbekräftelse</h2>

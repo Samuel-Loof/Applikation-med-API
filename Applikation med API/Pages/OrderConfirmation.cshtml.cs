@@ -11,7 +11,7 @@ public class OrderConfirmationModel : PageModel
     private readonly AppDbContext _database;
     private readonly AccessControl _accessControl;
 
-    public List<CartItem> OrderItems { get; set; } = new List<CartItem>(); //OrderItem?
+    public List<CartItem> OrderItems { get; set; } = new List<CartItem>();
     public decimal TotalPrice { get; set; }
 
     public OrderConfirmationModel(AppDbContext database, AccessControl accessControl)
@@ -31,8 +31,7 @@ public class OrderConfirmationModel : PageModel
 
         if (!OrderItems.Any())
         {
-            TempData["Message"] = "Vänligen lägg till produkter i varukorgen före utcheckning.";
-            return RedirectToPage("/Index"); // Redirects user back to the shopping page
+            return RedirectToPage("/Index");
         }
 
         TotalPrice = OrderItems.Sum(item => item.Price * item.Quantity);
