@@ -7,33 +7,25 @@
 
 <h1>Welcome, @accessControl.LoggedInAccountName!</h1>
 
-<a href="/ShoppingCart">Visa varukorg</a>
 
-<h2>Sortiment</h2>
-@if (Model.Products != null && Model.Products.Count > 0)
-{
-    <ul>
-        @foreach (var product in Model.Products)
-        {
-            <li>
-                <img src="images/@product.ImagePath" alt="En bild av @product.Name" style="width: 200px;" />
+<ul>
+    @foreach (var product in Model.Products)
+    {
+        <li>
+            <a asp-page="/ProductDetails" asp-route-id="@product.ID">
+                <img src="@product.ImagePath" alt="Image of @product.Name" />
                 <h3>@product.Name</h3>
-                <p>@product.Description</p>
-                <p>Pris: @(product.Price.ToString("0.##")) kr</p>
-                <p>Kategori: @product.Category</p>
+                <p>@product.Price kr</p>
                 <!-- Add to cart button -->
                 <form method="post">
                     <input type="hidden" name="productId" value="@product.ID" />
                     <button type="submit">Lägg i varukorg</button>
                 </form>
-            </li>
-        }
-    </ul>
-}
-else
-{
-    <p>Hittade inga produkter.</p>
-}
+            </a>
+        </li>
+    }
+</ul>
+
 
 <!-- pagination-->
 <nav aria-label="Page navigation">
@@ -50,6 +42,9 @@ else
 
         @if (Model.CurrentPage < Model.TotalPages)
         {
+
+            <!-- Next page link-->
+
             <li class="page-item">
                 <form method="get" asp-page="/Index">
                     <button type="submit" class="btn btn-primary" name="currentPage" value="@(Model.CurrentPage + 1)">Next</button>

@@ -3,6 +3,8 @@ using Applikation_med_API.Data;
 using System.Collections.Generic;
 using Applikation_med_API.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Storage;
 
 public class OrderConfirmationModel : PageModel
 {
@@ -18,15 +20,33 @@ public class OrderConfirmationModel : PageModel
         _accessControl = accessControl;
     }
 
-    public void OnGet()
+    public async Task<IActionResult> OnGetAsync()
     {
         int shoppingCartId = _accessControl.GetCurrentShoppingCartId();
         // Retrieve cart items for the logged-in user's shopping cart
-        OrderItems = _database.CartItems
-                              .Include(ci => ci.Product) // Assuming you need product details
+        OrderItems = await _database.CartItems
+                              .Include(ci => ci.Product) 
                               .Where(ci => ci.ShoppingCartId == shoppingCartId)
-                              .ToList();
+                              .ToListAsync();
+
+        if (!OrderItems.Any())
+        {
+            return RedirectToPage("/Index");
+        }
 
         TotalPrice = OrderItems.Sum(item => item.Price * item.Quantity);
+
+        // Clear the cart after confirming the order
+        await ClearCart(shoppingCartId);
+
+        return Page();
+    }
+
+    private async Task ClearCart (int shoppingCartId)
+    {
+        var itemsToRemove = _database.CartItems.Where(ci => ci.ShoppingCartId == shoppingCartId);
+        _database.CartItems.RemoveRange(itemsToRemove);
+        await _database.SaveChangesAsync();
+
     }
 }
