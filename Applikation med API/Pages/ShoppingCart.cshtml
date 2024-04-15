@@ -25,35 +25,29 @@
                     <td>@(product.Price.ToString("0.##")) kr</td>
                     <td>@product.Quantity</td>
                     <td>@((product.Price * product.Quantity).ToString("0.##")) kr</td>
-                    
-                    
-                    
 
 
-                    <td>
-            <!-- Decrement quantity form -->
-            <form method="post" asp-page-handler="DecrementQuantity" style="display:inline">
-                <input type="hidden" name="cartItemId" value="@product.ID" />
-                <button type="submit" class="btn btn-secondary btn-sm">-</button>
-            </form>
 
-            @product.Quantity
 
-            <!-- Increment quantity form -->
-            <form method="post" asp-page-handler="IncrementQuantity" style="display:inline">
-                <input type="hidden" name="cartItemId" value="@product.ID" />
-                <button type="submit" class="btn btn-secondary btn-sm">+</button>
-            </form>
-        </td>
-        <td>@((product.Price * product.Quantity).ToString("0.##")) kr</td>
 
                     <td>
-                        <!-- Form to remove an item from the cart [Currently doesn't work] -->
-                        <form method="post" asp-page-handler="RemoveProduct">
-                            <input type="hidden" name="productId" value="@product.ID" />
-                            <button type="submit" class="btn btn-danger">Ta bort produkt</button>
+                        <!-- Decrement quantity form -->
+                        <form method="post" asp-page-handler="DecrementQuantity" style="display:inline">
+                            <input type="hidden" name="cartItemId" value="@product.ID" />
+                            <button type="submit" class="btn btn-secondary btn-sm">-</button>
+                        </form>
+
+                        @product.Quantity
+
+                        <!-- Increment quantity form -->
+                        <form method="post" asp-page-handler="IncrementQuantity" style="display:inline">
+                            <input type="hidden" name="cartItemId" value="@product.ID" />
+                            <button type="submit" class="btn btn-secondary btn-sm">+</button>
                         </form>
                     </td>
+
+
+
                 </tr>
             }
         </tbody>

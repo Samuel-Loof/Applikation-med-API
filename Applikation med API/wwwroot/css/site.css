@@ -1,7 +1,7 @@
-/* General body and navigation styling */
+/* Menu, and shopping cart window css */
 body {
     margin: 0;
-    font-family: Arial, sans-serif; /* Ensures font consistency */
+    font-family: Arial, sans-serif; 
 }
 
 /* Navbar container */
@@ -17,27 +17,27 @@ body {
 }
 
 .navbar-right {
-    display: flex; /* Enables flexbox for children, aligning them in a row */
+    display: flex; 
     align-items: center;
-    gap: 20px; /* Adds space between children */
+    gap: 20px; 
 }
 
 .navbar-brand {
     font-size: 24px;
     color: white;
     text-decoration: none;
-    padding: 20px 0; /* Gives space around the logo text */
+    padding: 20px 0; 
 }
 
 /* Search form styling within the navbar */
 .search-form {
     display: flex;
-    gap: 10px; /* Adds space between form elements */
+    gap: 10px; 
     align-items: center;
 }
 
     .search-form input, .search-form select {
-        border-radius: 5px; /* Rounded corners for input and select */
+        border-radius: 5px; 
         padding: 8px 12px;
         background: #fff;
         border: 1px solid #ccc; 
@@ -49,7 +49,7 @@ body {
         border: none;
         padding: 10px 20px;
         cursor: pointer;
-        border-radius: 5px; /* Rounded corners for the button */
+        border-radius: 5px; 
         font-weight: bold;
     }
 
@@ -63,7 +63,7 @@ body {
     color: white;
     padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px; /* Rounded corners for the cart link */
+    border-radius: 5px; 
     font-weight: bold;
 }
 
