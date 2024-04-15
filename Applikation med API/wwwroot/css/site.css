@@ -1,7 +1,7 @@
 /* Menu, and shopping cart window css */
 body {
     margin: 0;
-    font-family: Arial, sans-serif; 
+    font-family: Arial, sans-serif;
 }
 
 /* Navbar container */
@@ -17,39 +17,39 @@ body {
 }
 
 .navbar-right {
-    display: flex; 
+    display: flex;
     align-items: center;
-    gap: 20px; 
+    gap: 20px;
 }
 
 .navbar-brand {
     font-size: 24px;
     color: white;
     text-decoration: none;
-    padding: 20px 0; 
+    padding: 20px 0;
 }
 
 /* Search form styling within the navbar */
 .search-form {
     display: flex;
-    gap: 10px; 
+    gap: 10px;
     align-items: center;
 }
 
     .search-form input, .search-form select {
-        border-radius: 5px; 
+        border-radius: 5px;
         padding: 8px 12px;
         background: #fff;
-        border: 1px solid #ccc; 
+        border: 1px solid #ccc;
     }
 
     .search-form button {
-        background-color: #444; 
+        background-color: #444;
         color: white;
         border: none;
         padding: 10px 20px;
         cursor: pointer;
-        border-radius: 5px; 
+        border-radius: 5px;
         font-weight: bold;
     }
 
@@ -58,17 +58,17 @@ body {
         }
 
 /* Cart link styling */
-.cart-button {
+.cart-button, .checkout-button {
     background-color: #555;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px; 
+    border-radius: 5px;
     font-weight: bold;
 }
 
     .cart-button:hover {
-        background-color: #444; 
+        background-color: #444;
     }
 
 /* Modal styling */
@@ -96,14 +96,20 @@ body {
     margin: 0;
     padding: 20px;
     height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     list-style-type: none;
 }
 
-.modal-content ul {
+    .modal-content ul {
         list-style-type: none;
         padding: 0;
         margin: 0;
-}
+        overflow-y: auto; /* Allows vertical scrolling */
+        max-height: 800px; 
+        flex-grow: 1; 
+    }
 
     .modal-content li {
         display: flex;
@@ -114,20 +120,20 @@ body {
     }
 
     .modal-content img {
-        width: 70px; 
-        height: 70px; 
+        width: 70px;
+        height: 70px;
         margin-right: 20px;
     }
 
     .modal-content .item-details {
         flex-grow: 1; /* Allows the details to take up remaining space */
-        padding-right: 40px; 
+        padding-right: 40px;
     }
 
 .item-details {
     flex-grow: 1;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -138,4 +144,81 @@ body {
     font-size: 24px;
 }
 
+/* General styling for table and table data */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
 
+th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Centering table headers and data */
+th, td {
+    text-align: center;
+}
+
+    /* Styling for images in table cells */
+    td img {
+        display: block;
+        margin: auto;
+        width: 50px;
+        height: auto;
+    }
+
+/* Button styling */
+.button, .clear-button, .order-button, .home-button, .decrement-button, .increment-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    background-color: #555;
+}
+
+
+
+.clear-button {
+    background-color: #ff4c4c;
+}
+
+.order-button {
+    background-color: #4CAF50;
+}
+
+.home-button {
+    background-color: #007bff;
+}
+
+.decrement-button, .increment-button {
+    background-color: #555;
+    color: white;
+    font-weight: bold;
+}
+
+
+    .button:hover, .clear-button:hover, .order-button:hover, .home-button:hover, .decrement-button:hover, .increment-button:hover {
+        opacity: 0.8;
+    }
+
+
+form {
+    display: inline;
+}
+
+form, .button {
+    margin-top: 20px;
+}

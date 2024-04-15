@@ -34,7 +34,7 @@
                         <!-- Decrement quantity form -->
                         <form method="post" asp-page-handler="DecrementQuantity" style="display:inline">
                             <input type="hidden" name="cartItemId" value="@product.ID" />
-                            <button type="submit" class="btn btn-secondary btn-sm">-</button>
+                            <button type="submit" class="decrement-button">-</button>
                         </form>
 
                         @product.Quantity
@@ -42,7 +42,7 @@
                         <!-- Increment quantity form -->
                         <form method="post" asp-page-handler="IncrementQuantity" style="display:inline">
                             <input type="hidden" name="cartItemId" value="@product.ID" />
-                            <button type="submit" class="btn btn-secondary btn-sm">+</button>
+                            <button type="submit" class="increment-button">+</button>
                         </form>
                     </td>
 
@@ -57,7 +57,7 @@
 
     <!-- Form to clear the cart -->
     <form method="post" asp-page-handler="ClearCart">
-        <button type="submit" class="btn btn-warning">Rensa varukorgen</button>
+        <button type="submit" class="clear-button">Rensa varukorgen</button>
     </form>
 }
 else
@@ -65,8 +65,12 @@ else
     <p>Din varukorg är tom.</p>
 }
 
-<a asp-page="/OrderConfirmation" class="btn btn-success">Slutför köp</a>
+<!-- Order link -->
+<a asp-page="/OrderConfirmation" class="order-button">Slutför köp</a>
 
 
-<!-- Button to go back to the main page -->
-<a href="/" class="btn btn-primary">Tillbaka till huvudsidan</a>
+
+
+<!-- Main page link -->
+<a href="/" class="home-button">Tillbaka till huvudsidan</a>
+
