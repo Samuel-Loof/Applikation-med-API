@@ -1,0 +1,141 @@
+/* General body and navigation styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Ensures font consistency */
+}
+
+/* Navbar container */
+.navbar {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 44px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-bottom: 2px solid #222;
+}
+
+.navbar-right {
+    display: flex; /* Enables flexbox for children, aligning them in a row */
+    align-items: center;
+    gap: 20px; /* Adds space between children */
+}
+
+.navbar-brand {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    padding: 20px 0; /* Gives space around the logo text */
+}
+
+/* Search form styling within the navbar */
+.search-form {
+    display: flex;
+    gap: 10px; /* Adds space between form elements */
+    align-items: center;
+}
+
+    .search-form input, .search-form select {
+        border-radius: 5px; /* Rounded corners for input and select */
+        padding: 8px 12px;
+        background: #fff;
+        border: 1px solid #ccc; 
+    }
+
+    .search-form button {
+        background-color: #444; 
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px; /* Rounded corners for the button */
+        font-weight: bold;
+    }
+
+        .search-form button:hover {
+            background-color: #e66454; /* Darker shade for hover effect */
+        }
+
+/* Cart link styling */
+.cart-button {
+    background-color: #555;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px; /* Rounded corners for the cart link */
+    font-weight: bold;
+}
+
+    .cart-button:hover {
+        background-color: #444; 
+    }
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.4);
+    transition: width 0.5s ease;
+}
+
+    .modal:target {
+        display: block;
+        width: 25%;
+    }
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 0;
+    padding: 20px;
+    height: 100%;
+    list-style-type: none;
+}
+
+.modal-content ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+}
+
+    .modal-content li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .modal-content img {
+        width: 70px; 
+        height: 70px; 
+        margin-right: 20px;
+    }
+
+    .modal-content .item-details {
+        flex-grow: 1; /* Allows the details to take up remaining space */
+        padding-right: 40px; 
+    }
+
+.item-details {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.close {
+    color: black;
+    text-decoration: none;
+    float: right;
+    font-size: 24px;
+}
+
+
