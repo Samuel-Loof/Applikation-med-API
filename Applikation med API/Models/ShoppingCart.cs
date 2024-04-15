@@ -11,7 +11,7 @@ namespace Applikation_med_API.Models
         // This correctly establishes the relationship between ShoppingCart and CartItem
         public List<CartItem> CartItems { get; set; } = new List<CartItem>();
 
-        public int count { get; set; }
+        //public int count { get; set; }
 
         // Foreign key to Account
         public int AccountID { get; set; }
