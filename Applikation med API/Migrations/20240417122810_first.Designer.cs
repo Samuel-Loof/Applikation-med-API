@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Applikation_med_API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240411110415_first")]
+    [Migration("20240417122810_first")]
     partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -96,9 +96,6 @@ namespace Applikation_med_API.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
                     b.Property<int>("AccountID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("count")
                         .HasColumnType("int");
 
                     b.HasKey("ID");

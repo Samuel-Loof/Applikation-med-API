@@ -53,7 +53,6 @@ namespace Applikation_med_API.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    count = table.Column<int>(type: "int", nullable: false),
                     AccountID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

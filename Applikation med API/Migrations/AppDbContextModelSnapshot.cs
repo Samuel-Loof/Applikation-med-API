@@ -96,9 +96,6 @@ namespace Applikation_med_API.Migrations
                     b.Property<int>("AccountID")
                         .HasColumnType("int");
 
-                    b.Property<int>("count")
-                        .HasColumnType("int");
-
                     b.HasKey("ID");
 
                     b.HasIndex("AccountID");
