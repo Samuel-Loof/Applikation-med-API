@@ -80,7 +80,7 @@ namespace Applikation_med_API.Pages
         }
 
 
-        public async Task<IActionResult> OnPostAsync(int productId)
+        public async Task<IActionResult> OnPostAsync(int productId, int currentPage)
         {
             //get the current ShoppingCartId
             int shoppingCartId = _accessControl.GetCurrentShoppingCartId();
@@ -113,7 +113,7 @@ namespace Applikation_med_API.Pages
             }
 
             await _database.SaveChangesAsync();
-            return RedirectToPage();
+            return RedirectToPage(new { currentPage } );
         }
 
     }
