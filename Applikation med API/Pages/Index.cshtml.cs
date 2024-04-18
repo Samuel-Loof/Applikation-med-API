@@ -80,7 +80,7 @@ namespace Applikation_med_API.Pages
         }
 
 
-        public async Task<IActionResult> OnPostAsync(int productId, int currentPage)
+        public async Task<IActionResult> OnPostAsync(int productId, int currentPage = 1)
         {
             //get the current ShoppingCartId
             int shoppingCartId = _accessControl.GetCurrentShoppingCartId();
