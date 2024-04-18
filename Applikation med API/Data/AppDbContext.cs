@@ -20,8 +20,7 @@ namespace Applikation_med_API.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>()
-                .Property(p => p.Price)
-                .HasPrecision(18, 4); // Used for decimals
+                .Property(p => p.Price);
         }
 
 

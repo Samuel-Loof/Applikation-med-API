@@ -14,6 +14,8 @@ namespace Applikation_med_API.Models
         // Foreign key to Account
         public int AccountID { get; set; }
 
+        public int count { get; set; }
+
         public Account Account { get; set; }
     }
 }
