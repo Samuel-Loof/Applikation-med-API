@@ -72,7 +72,8 @@ namespace Applikation_med_API.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(18)
+                        .HasColumnType("decimal(18,0)");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
