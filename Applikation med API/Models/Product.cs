@@ -15,7 +15,7 @@ namespace Applikation_med_API.Models
         public decimal Price { get; set; }
 
         public int Quantity { get; set; }
- 
+
         public string? Category { get; set; }
 
         public string? Description { get; set; }

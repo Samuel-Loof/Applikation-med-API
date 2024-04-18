@@ -47,7 +47,7 @@ namespace Applikation_med_API.Data
                 };
 
                 _db.ShoppingCarts.Add(shoppingCart);
-                _db.SaveChanges(); 
+                _db.SaveChanges();
 
                 return shoppingCart.ID;
             }

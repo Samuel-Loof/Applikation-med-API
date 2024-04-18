@@ -44,14 +44,14 @@ namespace Applikation_med_API.Pages
             IQueryable<Product> productQuery = _database.Products;
 
             //If there's an input, check which product name contain the substring provided
-            if(!string.IsNullOrEmpty(name))
+            if (!string.IsNullOrEmpty(name))
             {
                 productQuery = productQuery.Where(p => EF.Functions.Like(p.Name, $"%{name}%"));
             }
 
 
             //category filter
-            if(!string.IsNullOrEmpty(category))
+            if (!string.IsNullOrEmpty(category))
             {
                 productQuery = productQuery.Where(p => p.Category == category);
             }

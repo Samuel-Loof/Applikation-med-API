@@ -6,62 +6,66 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace Applikation_med_API.Controllers
 {
-    [Route("/api")]
-    [ApiController]
-    public class APIController : ControllerBase
-    {
-        private readonly AppDbContext database;
 
-        public APIController(AppDbContext database)
+    [ApiController]
+    [Route("/api/products")]
+    public class ProductsApiController : ControllerBase
+    {
+        private readonly AppDbContext _dbContext;
+
+        public ProductsApiController(AppDbContext dbContext)
         {
-            this.database = database;
+            _dbContext = dbContext;
         }
 
-        // GET method for products with filters for name, category, and pagination
-        [HttpGet("products")]
-        public async Task<IActionResult> GetProducts([FromQuery] string name, [FromQuery] string category, [FromQuery] int page = 1)
+        [HttpGet]
+        public async Task<IActionResult> GetProducts([FromQuery] string? name = null, [FromQuery] string? category = null, [FromQuery] int page = 1)
+        // Name and category are set to null to make these fields not required when searching for a product
         {
             const int PageSize = 10;
+            IQueryable<Product> query = _dbContext.Products;
 
-            // Query of all products
-            IQueryable<Product> query = database.Products;
-
-            // If a name filter is provided, apply a LIKE query to filter products by name
+            // Apply name filter if provided
             if (!string.IsNullOrEmpty(name))
             {
                 query = query.Where(p => EF.Functions.Like(p.Name, $"%{name}%"));
             }
 
+            // Apply category filter if provided
             if (!string.IsNullOrEmpty(category))
             {
                 query = query.Where(p => p.Category == category);
             }
 
-            var baseUrl = $"{Request.Scheme}://{Request.Host}{Request.PathBase}";
-
-
-            // Transform the products in the query into a list
+            var totalItems = await query.CountAsync();
             var products = await query
+                .OrderBy(p => p.Name)
+                .Skip((page - 1) * PageSize)
+                .Take(PageSize)
                 .Select(p => new
                 {
                     p.Name,
-                    ImageUrl = baseUrl + "/images/" + p.ImagePath,
+                    ImageUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/ProductDetails?id={p.ID}",
                     p.Price,
                     p.Category,
                     p.Description
                 })
-                .Skip((page - 1) * PageSize)
-                .Take(PageSize)
                 .ToListAsync();
 
-            if (!products.Any())
+            if (products.Count == 0)
             {
-                return NotFound(new { Message = "Inga produkter hittades baserat på den angivna filtreringen." });
+                return NotFound(new { Message = "No products found based on the provided filters." });
             }
 
-            return Ok(products);
+            return Ok(new
+            {
+                TotalCount = totalItems,
+                Products = products
+            });
         }
     }
 }
+
