@@ -21,7 +21,7 @@ namespace Applikation_med_API.Data
         {
             modelBuilder.Entity<Product>()
                 .Property(p => p.Price)
-                .HasPrecision(18, 0); // Used for decimals.
+                .HasPrecision(18, 4); // Used for decimals
         }
 
 

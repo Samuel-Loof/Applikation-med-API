@@ -19,7 +19,7 @@ namespace Applikation_med_API.Controllers
             this.database = database;
         }
 
-        // GET method for products with optional filters for name, category, and pagination support
+        // GET method for products with filters for name, category, and pagination
         [HttpGet("products")]
         public async Task<IActionResult> GetProducts([FromQuery] string name, [FromQuery] string category, [FromQuery] int page = 1)
         {
@@ -39,7 +39,6 @@ namespace Applikation_med_API.Controllers
                 query = query.Where(p => p.Category == category);
             }
 
-            // Constructing the base URL from the request to create absolute image URLs
             var baseUrl = $"{Request.Scheme}://{Request.Host}{Request.PathBase}";
 
 

@@ -36,7 +36,6 @@ namespace Applikation_med_API.Data
 
             if (shoppingCart != null)
             {
-                // If exists, return its ID
                 return shoppingCart.ID;
             }
             else
@@ -50,7 +49,7 @@ namespace Applikation_med_API.Data
                 _db.ShoppingCarts.Add(shoppingCart);
                 _db.SaveChanges(); 
 
-                return shoppingCart.ID; // Return the ID of the newly created ShoppingCart
+                return shoppingCart.ID;
             }
         }
 
